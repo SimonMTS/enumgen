@@ -1,8 +1,6 @@
 package level
 
-import "enum/enum"
-
-//go:generate stringer -type=Level
+//go:generate enumgen -type=Level
 type Level int
 
 const (
@@ -11,9 +9,3 @@ const (
 	WARNING
 	INFO
 )
-
-var Enum = enum.Init(
-	DEBUG,
-	ERROR,
-	WARNING,
-	INFO)
