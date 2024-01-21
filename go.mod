@@ -1,4 +1,4 @@
-module enum
+module github.com/SimonMTS/enumgen
 
 go 1.21.6
 

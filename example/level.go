@@ -1,4 +1,4 @@
-package level
+package example
 
 //go:generate enumgen -type=Level
 type Level int
