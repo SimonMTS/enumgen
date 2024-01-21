@@ -1,4 +1,4 @@
-# Enum helper
+# EnumGen
 
 A modified [cmd/stringer][1] that also generates some enum helper functions.
 
@@ -29,7 +29,7 @@ go generate ./...
 
 ```go
 fmt.Println(level.ERROR)                // ERROR
-fmt.Println(level.List())               // DEBUG ERROR WARNING INFO
+fmt.Println(level.List())               // [DEBUG ERROR WARNING INFO]
 fmt.Println(level.FromInt(4))           // WARNING true
 fmt.Println(level.FromInt(42))          // Level(-1) false
 fmt.Println(level.FromString("DEBUG"))  // DEBUG true
