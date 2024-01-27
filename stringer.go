@@ -38,6 +38,12 @@ var (
 		"use line comment text as printed text when present",
 	)
 	buildTags = flag.String("tags", "", "comma-separated list of build tags to apply")
+
+	prefixFunctions = flag.Bool(
+		"prefixfuncs",
+		false,
+		"prefix the enum helper funtions with the enum's name",
+	)
 )
 
 // Usage is a replacement usage function for the flags package.

@@ -20,13 +20,22 @@ func list(g *Generator, typeName string, values []Value) {
 		names = append(names, value.originalName)
 	}
 
-	g.Printf("func List() []%s {", typeName)
+	var prefix string
+	if *prefixFunctions {
+		prefix = typeName
+	}
+	g.Printf("func %sList() []%s {", prefix, typeName)
 	g.Printf("return []%s{%s}", typeName, strings.Join(names, ","))
 	g.Printf("}")
 }
 
 func fromString(g *Generator, typeName string, values []Value) {
-	g.Printf("func FromString(s string) (%s, bool) {", typeName)
+	var prefix string
+	if *prefixFunctions {
+		prefix = typeName
+	}
+
+	g.Printf("func %sFromString(s string) (%s, bool) {", prefix, typeName)
 	g.Printf("switch s {")
 
 	for _, value := range values {
@@ -44,7 +53,12 @@ func fromString(g *Generator, typeName string, values []Value) {
 }
 
 func fromInt(g *Generator, typeName string, values []Value) {
-	g.Printf("func FromInt(n int) (%s, bool) {", typeName)
+	var prefix string
+	if *prefixFunctions {
+		prefix = typeName
+	}
+
+	g.Printf("func %sFromInt(n int) (%s, bool) {", prefix, typeName)
 	g.Printf("switch n {")
 
 	for _, value := range values {
