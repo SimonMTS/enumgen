@@ -4,7 +4,7 @@ A modified [cmd/stringer][1] that also generates some enum helper functions.
 
 ## Install
 ```
-go install github.com/SimonMTS/enumgen
+go install github.com/SimonMTS/enumgen@latest
 ```
 
 ## Example usage
@@ -49,16 +49,16 @@ fmt.Print(level.FromString("test"))  // Level(-1) false
 fmt.Printf("%d %[1]s", level.INFO)   // 8 INFO
 
 
-fmt.Print(level.EXAMPLE_ZORK)              // "ZORK
-fmt.Print(level.ExampleList())             // "[ANSWER LEET ZORK]
+fmt.Print(level.EXAMPLE_ZORK)              // ZORK
+fmt.Print(level.ExampleList())             // [ANSWER LEET ZORK]
 
-fmt.Print(level.ExampleFromInt(42))        // "ANSWER true
-fmt.Print(level.ExampleFromInt(4))         // "Example(-1) false
+fmt.Print(level.ExampleFromInt(42))        // ANSWER true
+fmt.Print(level.ExampleFromInt(4))         // Example(-1) false
 
-fmt.Print(level.ExampleFromString("LEET")) //"LEET true
-fmt.Print(level.ExampleFromString("1337")) //"Example(-1) false
+fmt.Print(level.ExampleFromString("LEET")) // LEET true
+fmt.Print(level.ExampleFromString("1337")) // Example(-1) false
 
-fmt.Printf("%d %[1]s", level.EXAMPLE_1337) // "1337 LEET
+fmt.Printf("%d %[1]s", level.EXAMPLE_1337) // 1337 LEET
 ```
 
 For more details see the [cmd/stringer][1] docs.
