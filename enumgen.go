@@ -1,6 +1,9 @@
 package main
 
-import "strings"
+import (
+	"strings"
+	"unsafe"
+)
 
 func enumgen(g *Generator, typeName string, values []Value) {
 	g.Printf("\n")
@@ -17,7 +20,9 @@ func enumgen(g *Generator, typeName string, values []Value) {
 func list(g *Generator, typeName string, values []Value) {
 	names := make([]string, 0, len(values))
 	for _, value := range values {
-		names = append(names, value.originalName)
+		if *(*int64)(unsafe.Pointer(&value.value)) != -1 {
+			names = append(names, value.originalName)
+		}
 	}
 
 	var prefix string

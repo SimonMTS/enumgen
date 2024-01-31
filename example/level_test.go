@@ -32,10 +32,10 @@ func Test(t *testing.T) {
 	eq("[ANSWER LEET ZORK]", s(level.ExampleList()))
 
 	eq("ANSWER true", s(level.ExampleFromInt(42)))
-	eq("Example(-1) false", s(level.ExampleFromInt(4)))
+	eq("INVALID false", s(level.ExampleFromInt(4)))
 
 	eq("LEET true", s(level.ExampleFromString("LEET")))
-	eq("Example(-1) false", s(level.ExampleFromString("1337")))
+	eq("INVALID false", s(level.ExampleFromString("1337")))
 
 	eq("1337 LEET", sf("%d %[1]s", level.EXAMPLE_1337))
 }
