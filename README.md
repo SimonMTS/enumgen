@@ -4,7 +4,7 @@ A modified [cmd/stringer][1] that also generates some enum helper functions.
 
 ## Install
 ```
-go install github.com/SimonMTS/enumgen@latest
+go install github.com/SimonMTS/enumgen@1.0.0
 ```
 
 ## Example usage
